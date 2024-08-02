@@ -1,26 +1,20 @@
-import Image from 'next/image'
-import Navbar from './_components/NavBar'
-import Footer from './_components/Footer'
-import HeroSection from './_components/HeroSection'
-import Apps from './_components/Apps'
+import Image from "next/image";
+import HeroSection from "./_components/HeroSection";
+import Apps from "./_components/Apps";
+import PopularApps from "./_components/PopularApps";
+import gplay, { app } from "google-play-scraper";
+
 
 export default function Home() {
   return (
     <>
-    <Navbar />
 
-    <HeroSection />
+      <HeroSection />
 
-    <Apps/>
+      <Apps />
+      <PopularApps category={gplay.category.ANDROID_WEAR} title="Android Wear"  />
 
-    
-
-
-
-
-    <Footer />
-    
-    
+      
     </>
-  )
+  );
 }

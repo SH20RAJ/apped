@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FiSearch, FiUser } from "react-icons/fi";
 
@@ -10,13 +11,15 @@ export default function Navbar() {
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center space-x-4">
+          <Link href="/">
           <Image
             src="/logo.svg"
             alt="App Store Logo"
             width={50}
             height={50}
             className="cursor-pointer"
-          />
+            />
+            </Link>
           <ul className="hidden md:flex space-x-6">
             <li>
               <a href="#" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">

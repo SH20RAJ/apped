@@ -2,6 +2,19 @@
 
 import Image from "next/image";
 
+// add Copyright © 2014-2024 APKPure All rights reserved. | Privacy Policy | Copyright Policy | Terms | EU AMAU
+// add social media icons
+// add quick links
+// add categories
+// Developers
+// Developer Console
+// Submit APK
+// Traffic Monetization with APKPure
+// Company
+// About Us
+// Contact Us
+// Business Cooperation
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-8 mt-12">
