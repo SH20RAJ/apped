@@ -17,3 +17,7 @@ export const getCurrentYear = () => {
 export const getCurrentDate = () => {
   return new Date().getDate();
 };
+
+export const readableDate = (date) => {
+  return new Date(date).toDateString();
+}
