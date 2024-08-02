@@ -11,7 +11,7 @@ export default async function SideBar({appId , num}) {
   return (
     <div>
       {/* Sidebar */}
-      <div className="w-full lg:block p-8 overflow-auto">
+      <div className="w-full hidden lg:block p-8 overflow-auto">
         <h2 className="text-2xl font-bold mb-4">Similar Apps</h2>
         <ul className=' flex flex-col gap-4 overflow-auto '>
           {apps.map((app, index) => (

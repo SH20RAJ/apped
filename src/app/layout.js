@@ -7,13 +7,16 @@ export const metadata = {
   title: 'Apped - Download, Share, and Manage Your Apps',
   description: 'Apped is a platform for downloading, sharing, and managing your apps.',
 }
-
+let scripts = `
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
+     crossorigin="anonymous"></script>
+`;
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-     crossorigin="anonymous"></script>
+        
+      
       </head>
       <body className={inter.className}>{children}</body>
     </html>

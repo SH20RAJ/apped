@@ -1,7 +1,10 @@
 
 import Image from 'next/image'
-
+import gplay from 'google-play-scraper'
 function HeroSection() {
+
+  gplay.categories()
+  .then(console.log)
   return (
     <section className="bg-gray-100 py-12 mt-10">
       <div className="container mx-auto px-6">

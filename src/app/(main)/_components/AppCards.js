@@ -53,12 +53,14 @@ export const AppCard3 = ({ game }) => {
 export const AppCard4 = ({ app }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
+      <Link href={"/" + slugify(app.title) + "/" + app.appId}>
       <img
         src={app.icon}
         alt={app.title}
         className="w-full h-40 object-cover rounded-lg"
       />
       <h3 className="text-lg font-bold mt-2">{app.title}</h3>
+      </Link>
       <p className="text-sm text-gray-500">{app.developer}</p>
       <div className="flex items-center mt-2">
         <svg

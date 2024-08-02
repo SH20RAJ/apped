@@ -5,13 +5,14 @@ import SideBar from "./SideBar";
 import Link from "next/link";
 import { formatViews, readableDate } from "@/lib/func";
 import { Download } from "@/lib/svgs";
+import SimilarApps from "./SimilarApps";
 
 
 
 const AppViewer = async ({ appId }) => {
   let app = await gplay.app({ appId: appId });
 
-  console.log(app);
+  // console.log(app);
 
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row">
@@ -235,7 +236,7 @@ const AppViewer = async ({ appId }) => {
           </a>
         </div>
 
-      <SideBar appId={app.appId} />
+      <SimilarApps appId={app.appId} />
 
 
         {/* <Reviews/> */}
