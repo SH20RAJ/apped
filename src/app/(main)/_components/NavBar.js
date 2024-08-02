@@ -21,6 +21,10 @@ export default function Navbar() {
             />
             </Link>
           <ul className="hidden md:flex space-x-6">
+              <Link href="/" className=" text-xl text-blue-500  ">
+                  Apped
+              </Link>
+
             <li>
               <a href="#" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">
                 Games

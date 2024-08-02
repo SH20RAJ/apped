@@ -1,21 +1,21 @@
-import React from "react";
 
-export default function SideBar({appDetails}) {
+
+import gplay, { app } from 'google-play-scraper';
+import { AppCard4, AppCard5 } from './AppCards';
+
+
+export default async function SideBar({appId , num}) {
+  let apps = await gplay.similar({appId})
+  apps = apps.slice(0, num);
+
   return (
     <div>
       {/* Sidebar */}
-      <div className="w-1/4 pr-8 hidden lg:block">
-        <h2 className="text-2xl font-bold mb-4">Other Apps</h2>
-        <ul>
-          {appDetails.relatedApps.map((app, index) => (
-            <li key={index} className="mb-4 flex items-center">
-              <img
-                src={app.image}
-                alt={app.name}
-                className="w-12 h-12 object-cover rounded-lg"
-              />
-              <span className="ml-4 text-gray-700">{app.name}</span>
-            </li>
+      <div className="w-full lg:block p-8 overflow-auto">
+        <h2 className="text-2xl font-bold mb-4">Similar Apps</h2>
+        <ul className=' flex flex-col gap-4 overflow-auto '>
+          {apps.map((app, index) => (
+            <AppCard4 key={index} app={app} />
           ))}
         </ul>
       </div>

@@ -83,16 +83,20 @@ export const AppCard4 = ({ app }) => {
 
 export const AppCard5 = ({ app }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 h-58"> {/* Set a fixed height */}
-      <img
-        src={app.icon}
-        alt={app.title}
-        className="w-full h-28 object-cover rounded-t-lg"
-      />
-      <Link href={"/"+slugify(app.title)+"/"+app.appId}>
-        <h3 className="text-lg font-semibold mt-2 truncate">{app.title}</h3> {/* Add truncate class */}
+    <div className="bg-white rounded-lg shadow-md p-4 h-58">
+      {" "}
+      {/* Set a fixed height */}
+      <Link href={"/" + slugify(app.title) + "/" + app.appId}>
+        <img
+          src={app.icon}
+          alt={app.title}
+          className="w-full h-28 object-cover rounded-t-lg"
+        />
+        <h3 className="text-lg font-semibold mt-2 truncate">{app.title}</h3>{" "}
+        {/* Add truncate class */}
       </Link>
-      <p className="text-gray-600 truncate">{app.developer}</p> {/* Add truncate class */}
+      <p className="text-gray-600 truncate">{app.developer}</p>{" "}
+      {/* Add truncate class */}
       <p className="text-yellow-500 mt-1">⭐ {app.scoreText}</p>
     </div>
   );
