@@ -3,7 +3,51 @@
 @tailwind utilities;
 
 .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article {
+  @apply bg-white shadow-md rounded-lg p-4 text-lg;
+}
+
+.article h1 {
+  @apply text-xl font-bold;
+}
+
+.article p {
+  @apply text-gray-600;
+}
+
+.article img {
+  @apply w-full h-48 object-cover rounded-lg;
+}
+
+.article a {
+  @apply text-blue-500;
+}
+
+.article a:hover {
+  @apply text-blue-700;
+}
+
+.article .read-more {
+  @apply text-blue-500;
+}
+
+.article .read-more:hover {
+  @apply text-blue-700;
+}
+
+.article .read-more::after {
+  @apply content-['...'];
+}
+
+.article .read-more::after {
+  @apply content-['...'];
+}
+/* article li , ul , */
+.article li {
+  @apply list-disc ml-4;
+}

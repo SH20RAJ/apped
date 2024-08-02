@@ -34,7 +34,7 @@ const appDetails = {
   
 const AppViewer = async ({appId}) => {
 
-  let app = await gplay.app({appId: 'com.google.android.apps.translate'})
+  let app = await gplay.app({appId: appId});
 
   console.log(app);
 
@@ -46,7 +46,7 @@ const AppViewer = async ({appId}) => {
       <div className="w-full lg:w-3/4">
         {/* App Header */}
         <div className="flex items-center mb-8">
-          <img src={app.icon || "https://via.placeholder.com/150"} alt={app.title} className="w-32 h-32 object-cover rounded-lg" />
+          <img src={app.icon || "https://via.placeholder.com/150"} alt={app?.title} className="w-32 h-32 object-cover rounded-lg" />
           <div className="ml-4">
             <h1 className="text-3xl font-bold">{app.title}</h1>
             <p className="text-gray-600">{app.developer}</p>
@@ -77,7 +77,7 @@ const AppViewer = async ({appId}) => {
           <div>
           <h2 className="text-2xl font-bold mb-4">Description</h2>
 
-            <p className="text-gray-700 mb-4" dangerouslySetInnerHTML={{__html: app.descriptionHTML}}></p>
+            <p className="text-gray-700 mb-4 article" dangerouslySetInnerHTML={{__html: app.descriptionHTML}}></p>
             <div className="flex flex-wrap gap-2 mb-4">
               {app.categories.map((tag, index) => (
                 <Link href={"/tag/"+tag.id}><span key={index} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">{tag.name}</span></Link>
@@ -99,17 +99,8 @@ const AppViewer = async ({appId}) => {
 
        
 
-        {/* User Reviews */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">User Reviews</h2>
-          {appDetails.reviews.map((review, index) => (
-            <div key={index} className="mb-4 p-4 bg-gray-100 rounded-lg shadow-md">
-              <p className="font-semibold">{review.user}</p>
-              <p className="text-yellow-500">⭐ {review.rating}</p>
-              <p>{review.comment}</p>
-            </div>
-          ))}
-        </div>
+       {/* <Reviews/> */}
+
       </div>
 
       <SideBar appDetails={appDetails}/>
