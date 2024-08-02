@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="App Store Logo"
               width={50}
               height={50}

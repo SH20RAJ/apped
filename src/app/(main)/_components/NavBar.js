@@ -11,7 +11,7 @@ export default function Navbar() {
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center space-x-4">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="App Store Logo"
             width={50}
             height={50}
