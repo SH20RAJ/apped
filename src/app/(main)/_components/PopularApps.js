@@ -3,7 +3,7 @@ import gplay, { app } from "google-play-scraper";
 import { AppCard1 , AppCard2, AppCard4, AppCard5 } from './AppCards';
 
 
-const PopularApps = async ({ category , collection , num = 10 , title  = " Apps"}) => {
+const PopularApps = async ({ category , collection , num = 12 , title  = " Apps"}) => {
 
   let apps = await gplay.list({
     category,

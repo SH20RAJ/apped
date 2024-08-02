@@ -11,8 +11,11 @@ export default function Home() {
 
       <HeroSection />
 
-      <Apps />
-      <PopularApps category={gplay.category.ANDROID_WEAR} title="Android Wear"  />
+      {/* <Apps /> */}
+      <PopularApps category={gplay.category.ANDROID_WEAR} title="Android Wear" num="24"  />
+      <PopularApps category={gplay.category.APPLICATION} title="Application" num="24"  />
+      <PopularApps category={gplay.category.COMMUNICATION} title="Communication" num="24"  />
+      <PopularApps category={gplay.category.EDUCATION} title="Education" num="24"  />
 
       
     </>
