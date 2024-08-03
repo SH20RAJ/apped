@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FiSearch, FiUser } from "react-icons/fi";
+import SearchBar from "./SearchBar";
 
 export default function Navbar() {
   const [dropdown, setDropdown] = useState(false);
@@ -69,17 +70,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="relative text-gray-600 focus-within:text-gray-800">
-            <FiSearch className="absolute left-3 top-2.5" />
-            <input
-              type="search"
-              className="py-2 pl-10 pr-4 text-sm bg-gray-100 rounded-full focus:outline-none focus:bg-white shadow transition duration-300"
-              placeholder="Search..."
-            />
-          </div>
-          <FiUser className="text-2xl text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer" />
-        </div>
+        <SearchBar />
       </nav>
     </header>
   );
