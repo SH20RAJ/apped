@@ -160,11 +160,8 @@ const AppViewer = async ({ appId }) => {
             ></p>
             <div className="flex flex-wrap gap-2 mb-4">
               {app.categories.map((tag, index) => (
-                <Link href={"/tag/" + tag.id}>
-                  <span
-                    key={index}
-                    className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full"
-                  >
+                <Link href={"/tag/" + tag.id} key={index}>
+                  <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
                     {tag.name}
                   </span>
                 </Link>
