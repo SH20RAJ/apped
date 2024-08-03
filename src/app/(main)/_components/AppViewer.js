@@ -221,7 +221,7 @@ const AppViewer = async ({ appId }) => {
         {/* Download Buttons */}
         <div className="flex gap-4 mb-8">
           <a
-            href={"/api/download/" + appId}
+            href={"https://apis.forn.fun/apped/download.php?id=" + appId}
             target="_"
             className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md"
           >
