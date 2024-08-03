@@ -5,6 +5,8 @@ import gplay from "google-play-scraper";
 export async function generateMetadata({ params }) {
   const { appSlug, appId } = params;
   let app = await gplay.app({ appId: appId });
+  console.log(app);
+  
 
   return {
     title: app.title,
@@ -12,7 +14,13 @@ export async function generateMetadata({ params }) {
     image: app.icon,
     url: `https://www.apped.me/${appSlug}/${appId}`,
     //og and twitter
-    
+    openGraph: {
+      title: app.title,
+      description: app.summary,
+      image: app.headerImage || app.icon,
+      images : [...app.screenshots, app.icon],
+      url: `https://www.apped.me/${appSlug}/${appId}`,
+    },
   };
 }
 
