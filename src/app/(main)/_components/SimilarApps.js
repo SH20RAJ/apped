@@ -1,7 +1,6 @@
 
 
-import gplay, { app } from 'google-play-scraper';
-import { AppCard4, AppCard5 } from './AppCards';
+import gplay from 'google-play-scraper';
 import PopularApps from './PopularApps';
 
 
