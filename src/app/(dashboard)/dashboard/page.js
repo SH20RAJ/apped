@@ -5,13 +5,13 @@ export default function page() {
   return (
     <div
       className="
-     text-2xl flex flex-col justify-center items-center h-screen hover:text-gray-800 transition duration-300 cursor-pointer
-    "
+       text-2xl flex flex-col justify-center items-center h-screen hover:text-gray-800 transition duration-300 cursor-pointer
+      "
     >
-      Currently We are not accespitng any new users <br />
+      Currently We are not accepting any new users 
       <Link href={"/"}>
         {" "}
-        <span className=" underlin ">Go Home</span>{" "}
+        <span className=" underline "> {"< |"}Go Home {"| >"}</span>{" "}
       </Link>
     </div>
   );

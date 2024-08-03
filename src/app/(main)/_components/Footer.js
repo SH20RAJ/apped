@@ -115,6 +115,22 @@ export default function Footer() {
                   Contact US
                 </Link>
               </li>
+              <li className="mb-2">
+                <Link
+                  href="https://github.com/appedme/"
+                  className="text-gray-400 hover:text-white transition duration-300"
+                >
+                  GitHub
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  href="https://dev.to/apped"
+                  className="text-gray-400 hover:text-white transition duration-300"
+                >
+                  Dev Community
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
