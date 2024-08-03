@@ -8,8 +8,8 @@ import { Download } from "@/lib/svgs";
 import SimilarApps from "./SimilarApps";
 import Image from "next/image";
 
-const AppViewer = async ({ appId }) => {
-  let app = await gplay.app({ appId: appId });
+const AppViewer = async ({ appId, app }) => {
+  // let app = await gplay.app({ appId: appId });
 
   // console.log(app);
 
