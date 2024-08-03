@@ -4,7 +4,7 @@ import gplay from 'google-play-scraper'
 export default async function page() {
   let apps = await gplay.list({
     num: 200,
-    category: gplay.category.GAME
+    category: gplay.category.APPLICATION
   });
 
   return (

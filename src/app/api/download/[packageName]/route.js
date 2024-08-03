@@ -1,6 +1,5 @@
 // /app/api/download/[packageName]/route.js
 
-
 export async function GET(request, { params }) {
   const { packageName } = params;
   const apkUrl = `https://d.apkpure.net/b/APK/${packageName}?version=latest`;
@@ -10,7 +9,7 @@ export async function GET(request, { params }) {
     const response = await fetch(apkUrl);
 
     if (!response.ok) {
-      return new Response('File not found', { status: 404 });
+      return new Response("File not found", { status: 404 });
     }
 
     // Create a readable stream from the response
@@ -34,13 +33,14 @@ export async function GET(request, { params }) {
     // Create a response with the stream and appropriate headers
     return new Response(stream, {
       headers: {
-        'Content-Type': 'application/vnd.android.package-archive',
-        'Content-Disposition': `attachment; filename="${packageName}-apped.me.apk"`,
-        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+        "Content-Type": "application/vnd.android.package-archive",
+        "Content-Disposition": `attachment; filename="${packageName}-apped.me.apk"`,
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
       },
     });
   } catch (error) {
-    console.error('Error downloading APK:', error);
-    return new Response('Internal server error', { status: 500 });
+    console.error("Error downloading APK:", error);
+    return new Response("Internal server error", { status: 500 });
   }
 }
