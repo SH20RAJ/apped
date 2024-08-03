@@ -6,6 +6,7 @@ import Link from "next/link";
 import { formatViews, readableDate } from "@/lib/func";
 import { Download } from "@/lib/svgs";
 import SimilarApps from "./SimilarApps";
+import Image from "next/image";
 
 const AppViewer = async ({ appId }) => {
   let app = await gplay.app({ appId: appId });
@@ -106,7 +107,11 @@ const AppViewer = async ({ appId }) => {
             target="_"
             className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md"
           >
-            Google Play
+            Get on Play{" "}
+            <img
+              src={"/googleplay.svg"}
+              className=" inline w-[20px] m-1 shadow-sm "
+            />
           </a>
         </div>
 
@@ -170,51 +175,135 @@ const AppViewer = async ({ appId }) => {
           {/* App Information */}
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-2">App Information</h2>
-            <ul>
-              <li className="mb-1">
-                <strong>Downloads:</strong> {parseInt(app.maxInstalls)}
-              </li>
-              {/* <li className="mb-1">
-                <strong>Size:</strong> {appDetails.size}
-              </li> */}
-              <li className="mb-1">
-                <strong>Version:</strong> {app.version}
-              </li>
-              <li className="mb-1">
-                <strong>Updated:</strong> {readableDate(app.updated)}
-              </li>
-              <hr />
-              <div>
-                <h1>{app.title}</h1>
-                <p>Summary: {app.summary}</p>
-                <p>Released: {app.released}</p>
-                <p>Recent Changes: {app.recentChanges}</p>
-                <p>Installs: {app.installs}</p>
-                <p>
-                  Score: {app.scoreText} ({app.score})
-                </p>
-                <p>Ratings: {app.ratings}</p>
-                <p>Reviews: {app.reviews}</p>
-                <p>Price: {app.priceText}</p>
-                <p>Developer: {app.developer}</p>
-                <p>Developer Email: {app.developerEmail}</p>
-                <p>
-                  Developer Website:{" "}
-                  <a href={app.developerWebsite}>{app.developerWebsite}</a>
-                </p>
-                <p>
-                  Privacy Policy:{" "}
-                  <a href={app.privacyPolicy}>{app.privacyPolicy}</a>
-                </p>
-                <p>Genre: {app.genre}</p>
-                <p>Content Rating: {app.contentRating}</p>
-                <p>Ad Supported: {app.adSupported ? "Yes" : "No"}</p>
-                <p>App ID: {app.appId}</p>
-                <p>
-                  URL: <a href={app.url}>{app.url}</a>
-                </p>
-              </div>
-            </ul>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white">
+                <thead>
+                  <tr className="w-full border-b">
+                    <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                      Property
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                      Value
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Downloads</td>
+                    <td className="py-3 px-4 border-b">
+                      {parseInt(app.maxInstalls)}
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Version</td>
+                    <td className="py-3 px-4 border-b">{app.version}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Updated</td>
+                    <td className="py-3 px-4 border-b">
+                      {readableDate(app.updated)}
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Title</td>
+                    <td className="py-3 px-4 border-b">{app.title}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Summary</td>
+                    <td className="py-3 px-4 border-b">{app.summary}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Released</td>
+                    <td className="py-3 px-4 border-b">{app.released}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Recent Changes</td>
+                    <td className="py-3 px-4 border-b">{app.recentChanges}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Installs</td>
+                    <td className="py-3 px-4 border-b">{app.installs}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Score</td>
+                    <td className="py-3 px-4 border-b">
+                      {app.scoreText} ({app.score})
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Ratings</td>
+                    <td className="py-3 px-4 border-b">{app.ratings}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Reviews</td>
+                    <td className="py-3 px-4 border-b">{app.reviews}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Price</td>
+                    <td className="py-3 px-4 border-b">{app.priceText}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Developer</td>
+                    <td className="py-3 px-4 border-b">{app.developer}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Developer Email</td>
+                    <td className="py-3 px-4 border-b">{app.developerEmail}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Developer Website</td>
+                    <td className="py-3 px-4 border-b">
+                      <a
+                        href={app.developerWebsite}
+                        className="text-blue-500 hover:underline"
+                      >
+                        {app.developerWebsite}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Privacy Policy</td>
+                    <td className="py-3 px-4 border-b">
+                      <a
+                        href={app.privacyPolicy}
+                        className="text-blue-500 hover:underline"
+                      >
+                        {app.privacyPolicy}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Genre</td>
+                    <td className="py-3 px-4 border-b">{app.genre}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Content Rating</td>
+                    <td className="py-3 px-4 border-b">{app.contentRating}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">Ad Supported</td>
+                    <td className="py-3 px-4 border-b">
+                      {app.adSupported ? "Yes" : "No"}
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">App ID</td>
+                    <td className="py-3 px-4 border-b">{app.appId}</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 border-b">URL</td>
+                    <td className="py-3 px-4 border-b">
+                      <a
+                        href={app.url}
+                        className="text-blue-500 hover:underline"
+                      >
+                        {app.url}
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -223,16 +312,20 @@ const AppViewer = async ({ appId }) => {
           <a
             href={"https://apis.forn.fun/apped/download.php?id=" + appId}
             target="_"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md  flex items-center"
           >
             Download APK {appId}
           </a>
           <a
             href={app.url}
             target="_"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md"
+            className="bg-green-500 text-white px-4 py-2 text-lg  rounded-lg shadow-md"
           >
-            Google Play
+            Get on Play{" "}
+            <img
+              src={"/googleplay.svg"}
+              className=" inline w-[40px] m-1 shadow-sm "
+            />
           </a>
         </div>
 
