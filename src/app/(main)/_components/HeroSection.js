@@ -26,7 +26,7 @@ function HeroSection() {
             <p className="text-gray-600 mb-8">
               Find the best apps and games for your device. We have a collection of over 10,000 apps and games for you to choose from.
             </p>
-            <a href="#" className="bg-fuchsia-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-fuchsia-700 transition duration-300">
+            <a href="#topapps" className="bg-fuchsia-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-fuchsia-700 transition duration-300">
               Explore Now
             </a>
           </div>

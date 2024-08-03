@@ -92,6 +92,15 @@ const AppViewer = async ({ appId }) => {
             </div>
           </div>
         </div>
+        <div className="flex flex-wrap gap-2 mb-4">
+              {app.categories.map((tag, index) => (
+                <Link href={"/tag/" + (tag.id).toLowerCase()} key={index}>
+                  <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
+                    {tag.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
 
         {/* Download Buttons */}
         <div className="flex gap-4 mb-8">
@@ -160,7 +169,7 @@ const AppViewer = async ({ appId }) => {
             ></p>
             <div className="flex flex-wrap gap-2 mb-4">
               {app.categories.map((tag, index) => (
-                <Link href={"/tag/" + tag.id} key={index}>
+                <Link href={"/tag/" + (tag.id).toLowerCase()} key={index}>
                   <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
                     {tag.name}
                   </span>

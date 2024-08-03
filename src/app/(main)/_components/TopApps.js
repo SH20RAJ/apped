@@ -1,11 +1,9 @@
 import gplay, { app } from "google-play-scraper";
+import { AppCard5 } from './AppCards';
 
-import { AppCard1 , AppCard2, AppCard4, AppCard5 } from './AppCards';
+const TopApps = async ({ apps, category, collection = gplay.collection.GROSSING, num = 12, title = "Apps", col }) => {
 
-
-const PopularApps = async ({apps ,  category , collection , num = 12 , title  = " Apps" , col}) => {
-
-  if(!apps){
+  if (!apps) {
     apps = await gplay.list({
       category,
       collection,
@@ -13,16 +11,11 @@ const PopularApps = async ({apps ,  category , collection , num = 12 , title  = 
     });
   }
 
-
-  // console.log(apps);
-
-
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Action Games Section */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <div className={"grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"}>
+        <div className={`${col ? 'flex flex-col gap-4' : 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4'}`}>
           {
             apps.map((app, index) => (
               <AppCard5 key={index} app={app} />
@@ -30,12 +23,8 @@ const PopularApps = async ({apps ,  category , collection , num = 12 , title  = 
           }
         </div>
       </div>
-      </div>
-
-      
+    </div>
   );
 };
 
-
-
-export default PopularApps;
+export default TopApps;

@@ -27,43 +27,41 @@ export default function Navbar() {
               </Link>
 
             <li>
-              <a href="#" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">
+              <Link href="/games" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">
                 Games
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">
+              <Link href="/apps" className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300">
                 Apps
-              </a>
+              </Link>
             </li>
             <li className="relative">
               <button onClick={() => setDropdown(!dropdown)} className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300 flex items-center">
                 Articles
-                <svg className="ml-1 w-4 h-4 transform transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L10 6.414l-3.293 3.293a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
+                
               </button>
               {dropdown && (
                 <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-10">
                   <li>
-                    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
+                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
                       New
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
+                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
                       Reviews
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
+                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
                       How-To
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
+                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-100 transition duration-300">
                       Topics
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}
