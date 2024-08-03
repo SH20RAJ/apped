@@ -7,8 +7,6 @@ import { formatViews, readableDate } from "@/lib/func";
 import { Download } from "@/lib/svgs";
 import SimilarApps from "./SimilarApps";
 
-
-
 const AppViewer = async ({ appId }) => {
   let app = await gplay.app({ appId: appId });
 
@@ -24,6 +22,7 @@ const AppViewer = async ({ appId }) => {
           {/* App Header */}
           <div className="flex flex-col lg:flex-row items-center mb-8">
             <img
+              loading="lazy"
               src={app.icon || "https://via.placeholder.com/150"}
               alt={app?.title}
               className="w-32 h-32 object-cover rounded-lg shadow-lg"
@@ -133,6 +132,7 @@ const AppViewer = async ({ appId }) => {
           <div className="flex overflow-x-scroll space-x-4 pb-4">
             {app.screenshots.map((image, index) => (
               <img
+                loading="lazy"
                 key={index}
                 src={image}
                 alt={`Screenshot ${index + 1}`}
@@ -236,8 +236,7 @@ const AppViewer = async ({ appId }) => {
           </a>
         </div>
 
-      <SimilarApps appId={app.appId} />
-
+        <SimilarApps appId={app.appId} />
 
         {/* <Reviews/> */}
       </div>
