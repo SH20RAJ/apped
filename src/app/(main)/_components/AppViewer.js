@@ -30,7 +30,7 @@ const AppViewer = async ({ appId, app }) => {
             />
             <div className="mt-4 lg:mt-0 lg:ml-6 text-center lg:text-left">
               <h1 className="text-3xl font-bold text-gray-900">{app.title}</h1>
-              <title>{app.title}</title>
+              {/* <title>{app.title}</title> */}
               <p className="text-gray-600">{app.developer}</p>
               <p className="text-yellow-500 mt-1">⭐ {app.scoreText}</p>
               <div className="flex flex-wrap justify-center lg:justify-start mt-2 space-x-2 text-sm">
