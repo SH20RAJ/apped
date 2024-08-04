@@ -55,7 +55,11 @@ export default async function AppPage({ params }) {
   };
   return (
     <div>
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
 
       <AppViewer app={app} appId={appId} />
     </div>
