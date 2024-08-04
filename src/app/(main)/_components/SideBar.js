@@ -19,7 +19,7 @@ export default async function SideBar({appId , num}) {
   return (
     <div>
       {/* Top Apps */}
-      <div className="w-full p-8">
+      <div className="w-full p-8 hidden sm:flex">
         <ul className=' flex flex-col gap-4'>
           <TopApps  title='Top Apps' col={true}   />
         </ul>
