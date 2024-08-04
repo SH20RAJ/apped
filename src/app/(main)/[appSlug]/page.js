@@ -1,17 +1,26 @@
-import gplay from "google-play-scraper";
-import PopularApps from "../_components/PopularApps";
+// import gplay from "google-play-scraper";
+// import PopularApps from "../_components/PopularApps";
 
-export default async function page({ params }) {
-  const { appSlug } = params;
-  // console.log(appSlug);
+// export default async function page({ params }) {
+//   const { appSlug } = params;
+//   // console.log(appSlug);
 
-  let apps = await gplay
-    .developer({ devId: appSlug || "DxCo Games" })
-    // .then(console.log);
+//   let apps = await gplay
+//     .developer({ devId: appSlug || "DxCo Games" })
+//     // .then(console.log);
 
+//   return (
+//     <div>
+//       <PopularApps apps={apps} />
+//     </div>
+//   );
+// }
+import React from 'react'
+
+export default function page() {
   return (
     <div>
-      <PopularApps apps={apps} />
+      404
     </div>
-  );
+  )
 }
