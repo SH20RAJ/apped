@@ -43,6 +43,11 @@ export default async function AppPage({ params }) {
       price: app.price,
       priceCurrency: app.currency,
     },
+    author : {
+      "@type": "Organization",
+      name: app.developer,
+      
+    },
     review: {
       "@type": "Review",
       reviewRating: {
