@@ -4,12 +4,14 @@ import Apps from "./_components/Apps";
 import PopularApps from "./_components/PopularApps";
 import gplay, { app } from "google-play-scraper";
 import TopApps from "./_components/TopApps";
+import AppCrousel from "./_components/AppCrousel";
 
 
 export default function Home() {
   return (
     <>
 
+      <AppCrousel  />
       <HeroSection />
 
       {/* <Apps /> */}

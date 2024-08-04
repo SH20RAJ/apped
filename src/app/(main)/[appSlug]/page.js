@@ -3,11 +3,11 @@ import PopularApps from "../_components/PopularApps";
 
 export default async function page({ params }) {
   const { appSlug } = params;
-  console.log(appSlug);
+  // console.log(appSlug);
 
   let apps = await gplay
     .developer({ devId: appSlug || "DxCo Games" })
-    .then(console.log);
+    // .then(console.log);
 
   return (
     <div>
