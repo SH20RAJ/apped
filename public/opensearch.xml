@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>AppedMe Search</ShortName>
+    <Description>Search the AppedMe website</Description>
+    <Tags>apps, downloader, APK, AppedMe</Tags>
+    <Contact>sh20raj@gmail.com</Contact>
+    <Url type="text/html" template="https://apped.me/search?q={searchTerms}" />
+    <Image height="16" width="16" type="image/x-icon">https://apped.me/favicon.ico</Image>
+    <Image height="64" width="64" type="image/png">https://apped.me/logo.png</Image>
+    <Query role="example" searchTerms="APK downloader" />
+    <Developer>AppedMe</Developer>
+    <Attribution>AppedMe - Your App Store</Attribution>
+    <SyndicationRight>open</SyndicationRight>
+    <AdultContent>false</AdultContent>
+    <Language>en</Language>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

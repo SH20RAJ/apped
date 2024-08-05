@@ -7,17 +7,19 @@ export async function generateMetadata({ params }) {
   let app = await gplay.app({ appId: appId });
 
   return {
-    title: app.title,
+    title: app.title +" APK Download for Android - Latest Version",
     description: app.summary,
     image: app.icon,
-    url: `https://www.apped.me/${appSlug}/${appId}`,
+    url: `https://apped.me/${appSlug}/${appId}`,
     //og and twitter
     openGraph: {
       title: app.title,
+      site_name: "AppEd",
+      type: "website",      
       description: app.summary,
       image: app.headerImage || app.icon,
       images: [...app.screenshots, app.icon],
-      url: `https://www.apped.me/${appSlug}/${appId}`,
+      url: `https://apped.me/${appSlug}/${appId}`,
     },
   };
 }

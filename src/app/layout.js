@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="search" type="application/opensearchdescription+xml" title="AppedMe Search" href="/opensearch.xml"/>
       
       </head>
       <body className={inter.className}>{children}</body>
