@@ -7,6 +7,7 @@ import SimilarApps from "./SimilarApps";
 import { DownloadButtons } from "./ViewerComponents";
 import Img from "@/lib/Img";
 import { redirect } from "next/navigation";
+import Histogram from "./Histogram";
 
 const AppViewer = async ({ appId, app, download }) => {
   // let app = await gplay.app({ appId: appId });
@@ -229,6 +230,9 @@ const AppViewer = async ({ appId, app, download }) => {
         {/* Download Buttons */}
         <DownloadButtons app={app} appId={appId} />
 
+        {/* Histogram */}
+        <Histogram data={app} />
+
         {/* Similar Apps */}
 
         <SimilarApps appId={app.appId} />
@@ -291,7 +295,7 @@ export const AppHeader = ({ app }) => {
           <h1 className="text-3xl font-bold text-gray-900">{app.title}</h1>
           {/* <title>{app.title}</title> */}
           <p className="text-gray-600">{app.developer}</p>
-          <p className="text-yellow-500 mt-1">⭐ {app.scoreText}</p>
+          <p className="text-yellow-800 mt-1">⭐ {app.scoreText}</p>
           <div className="flex flex-wrap justify-center lg:justify-start mt-2 space-x-2 text-sm">
             <span className="text-teal-600 flex items-center">
               <svg
