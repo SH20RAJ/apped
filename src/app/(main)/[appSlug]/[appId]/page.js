@@ -45,13 +45,16 @@ export default async function AppPage({ params }) {
       price: app.price,
       priceCurrency: app.currency,
     },
-    author : {
+    author: {
       "@type": "Organization",
       name: app.developer,
-      
     },
     review: {
       "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: "Apped Me",
+      },
       reviewRating: {
         "@type": "Rating",
         ratingValue: app.score,
@@ -60,6 +63,7 @@ export default async function AppPage({ params }) {
       },
     },
   };
+  
   return (
     <div>
       <script
