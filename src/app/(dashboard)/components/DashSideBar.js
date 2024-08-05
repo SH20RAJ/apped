@@ -34,7 +34,7 @@ export default function DashSideBar() {
 
             <li className="px-4 py-4">
               <Link
-                href="/apps"
+                href="/dashboard/apps"
                 className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
               >
                 <FiGrid className="mr-3 text-lg" />
@@ -43,7 +43,7 @@ export default function DashSideBar() {
             </li>
             <li className="px-4 py-4">
               <Link
-                href="/stats"
+                href="/dashboard/stats"
                 className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
               >
                 <FiBarChart2 className="mr-3 text-lg" />
@@ -52,7 +52,7 @@ export default function DashSideBar() {
             </li>
             <li className="px-4 py-4">
               <Link
-                href="/settings"
+                href="/dashboard/settings"
                 className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
               >
                 <FiSettings className="mr-3 text-lg" />
@@ -61,7 +61,7 @@ export default function DashSideBar() {
             </li>
             <li className="px-4 py-4">
               <Link
-                href="/reviews"
+                href="/dashboard/reviews"
                 className="flex items-center text-gray-800 hover:text-blue-600 transition duration-300"
               >
                 <FiStar className="mr-3 text-lg" />

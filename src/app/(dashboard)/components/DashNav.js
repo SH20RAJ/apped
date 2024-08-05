@@ -41,7 +41,7 @@ export default function DashNav() {
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                 <a
-                  href="#"
+                  href="logout"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Logout
@@ -58,7 +58,7 @@ export default function DashNav() {
               Dashboard
             </Link>
             <a
-              href="#"
+              href="/logout"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
             >
               Logout

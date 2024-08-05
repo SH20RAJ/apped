@@ -51,7 +51,6 @@ export default function CreateApp() {
 
   return (
     <div className="container mx-auto px-6 py-8">
-
       <div className="flex justify-between mb-8">
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-md transition duration-300"
@@ -65,6 +64,7 @@ export default function CreateApp() {
           Create App
         </button>
       </div>
+
       <h1 className="text-3xl font-bold mb-8">Create a New App</h1>
       <form className="space-y-8">
         {/* Section 1: Basic Info */}
