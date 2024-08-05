@@ -70,6 +70,7 @@ export default async function AppPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <link rel="shortcut icon" href={app.icon} type="image/x-icon" />
       
 
       <AppViewer app={app} appId={appId} />
