@@ -83,6 +83,19 @@ const Img = async ({ src, mode = 'normal', width, height, format, fit, text, the
         />
       );
     }
+  } else if (mode === 'cloudinary') {
+
+    const encodedUrl = encodeURIComponent(src);
+    let cdnUrl = `https://res.cloudinary.com/practicaldev/image/fetch/s--8uhQJctp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/${encodedUrl}`;
+    const queryParams = [];
+    if (width) queryParams.push(`width=${width}`);
+    if (height) queryParams.push(`height=${height}`);
+    if (format) queryParams.push(`format=${format}`);
+    if (fit) queryParams.push(`fit=${fit}`);
+    if (queryParams.length) cdnUrl += `?${queryParams.join('&')}`;
+    finalSrc = cdnUrl;
+
+
   }
 
   return (

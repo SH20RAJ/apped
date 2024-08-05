@@ -5,10 +5,13 @@ import { formatViews, readableDate } from "@/lib/func";
 import { Download } from "@/lib/svgs";
 import SimilarApps from "./SimilarApps";
 import { DownloadButtons } from "./ViewerComponents";
+import Img from "@/lib/Img";
+import { redirect } from "next/navigation";
 
-const AppViewer = async ({ appId, app }) => {
+const AppViewer = async ({ appId, app, download }) => {
   // let app = await gplay.app({ appId: appId });
-
+  // 
+  // if(download) redirect(app.url);
   // console.log(app);
 
   return (
@@ -53,7 +56,8 @@ const AppViewer = async ({ appId, app }) => {
           <h2 className="text-2xl font-bold mb-4">Screenshots</h2>
           <div className="flex overflow-x-scroll space-x-4 pb-4">
             {app.screenshots.map((image, index) => (
-              <img
+              <Img
+                mode="cloudinary"
                 loading="lazy"
                 key={index}
                 src={image}
@@ -249,9 +253,9 @@ export default AppViewer;
 export const AppHeader2 = ({ app }) => {
   return (
     <div className="flex gap-4 mb-8">
-      <img
-        loading="lazy
-        "
+      <Img
+        loading="lazy"
+        mode="cloudinary"
         src={app.icon}
         alt={app.title}
         className="w-24 h-24 rounded-lg shadow-md"
@@ -274,7 +278,8 @@ export const AppHeader = ({ app }) => {
     <div className="container mx-auto p-4 lg:p-8">
       {/* App Header */}
       <div className="flex flex-col lg:flex-row items-center mb-8">
-        <img
+        <Img
+          mode="cloudinary"
           loading="lazy"
           src={app.icon || "https://via.placeholder.com/150"}
           alt={app?.title}

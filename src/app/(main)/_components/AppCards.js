@@ -1,4 +1,5 @@
 import { slugify } from "@/lib/func";
+import Img from "@/lib/Img";
 import Link from "next/link";
 
 export const AppCard1 = ({ game }) => {
@@ -6,6 +7,7 @@ export const AppCard1 = ({ game }) => {
     <div className="flex bg-white rounded-lg shadow-md p-4">
       <img
         loading="lazy"
+        mode="cloudinary"
         src={game.image}
         alt={game.name}
         className="w-32 h-32 object-cover rounded-lg"
@@ -22,8 +24,9 @@ export const AppCard1 = ({ game }) => {
 export const AppCard2 = ({ game }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
-      <img
+      <Img
         loading="lazy"
+        mode="cloudinary"
         src={game.image}
         alt={game.name}
         className="w-full h-32 object-cover rounded-t-lg"
@@ -93,8 +96,9 @@ export const AppCard5 = ({ app }) => {
       {" "}
       {/* Set a fixed height */}
       <Link href={"/" + slugify(app.title) + "/" + app.appId}>
-        <img
+        <Img
           loading="lazy"
+          mode="cloudinary"
           src={app.icon}
           alt={app.title}
           className="w-full h-28 object-cover rounded-t-lg"

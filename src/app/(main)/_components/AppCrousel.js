@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import Img from '@/lib/Img';
 
 export default function AppCrousel({apps}) {
 
@@ -42,7 +43,7 @@ export default function AppCrousel({apps}) {
         {
           images.map((img, index) => (
             <SwiperSlide key={index}>
-              <img src={img} className="object-cover w-full h-full" />
+              <Img mode='cloudinary' src={img} className="object-cover w-full h-full" />
             </SwiperSlide>
           ))
         }
