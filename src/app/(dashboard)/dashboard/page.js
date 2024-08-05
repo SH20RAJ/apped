@@ -1,18 +1,7 @@
-import Link from "next/link";
-import React from "react";
+import DashContent from "../components/DashContent";
 
-export default function page() {
+export default function Dashboard() {
   return (
-    <div
-      className="
-       text-2xl flex flex-col justify-center items-center h-screen hover:text-gray-800 transition duration-300 cursor-pointer
-      "
-    >
-      Currently We are not accepting any new users 
-      <Link href={"/"}>
-        {" "}
-        <span className=" underline "> {"< |"}Go Home {"| >"}</span>{" "}
-      </Link>
-    </div>
+    <DashContent />
   );
 }
