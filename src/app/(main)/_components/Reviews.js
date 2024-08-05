@@ -12,7 +12,7 @@ export default function Reviews() {
             className="mb-4 p-4 bg-gray-100 rounded-lg shadow-md"
           >
             <p className="font-semibold">{review.user}</p>
-            <p className="text-yellow-500">⭐ {review.rating}</p>
+            <p className="text-yellow-800">⭐ {review.rating}</p>
             <p>{review.comment}</p>
           </div>
         ))}

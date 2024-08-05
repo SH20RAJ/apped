@@ -15,7 +15,7 @@ export const AppCard1 = ({ game }) => {
       <div className="ml-4">
         <h3 className="text-lg font-semibold">{game.name}</h3>
         <p className="text-gray-600">{game.publisher}</p>
-        <p className="text-yellow-500 mt-1">⭐ {game.rating}</p>
+        <p className="text-yellow-800 mt-1">⭐ {game.rating}</p>
       </div>
     </div>
   );
@@ -33,7 +33,7 @@ export const AppCard2 = ({ game }) => {
       />
       <h3 className="text-lg font-semibold mt-2">{game.name}</h3>
       <p className="text-gray-600">{game.publisher}</p>
-      <p className="text-yellow-500 mt-1">⭐ {game.rating}</p>
+      <p className="text-yellow-800 mt-1">⭐ {game.rating}</p>
     </div>
   );
 };
@@ -50,7 +50,7 @@ export const AppCard3 = ({ game }) => {
       <div className="ml-4">
         <h3 className="text-lg font-semibold">{game.name}</h3>
         <p className="text-gray-600">{game.publisher}</p>
-        <p className="text-yellow-500 mt-1">⭐ {game.rating}</p>
+        <p className="text-yellow-800 mt-1">⭐ {game.rating}</p>
       </div>
     </div>
   );
@@ -72,7 +72,7 @@ export const AppCard4 = ({ app }) => {
       <div className="flex items-center mt-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 text-yellow-500"
+          className="h-4 w-4 text-yellow-800"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -110,7 +110,7 @@ export const AppCard5 = ({ app }) => {
       </Link>
       <p className="text-gray-600 truncate">{app.developer}</p>{" "}
       {/* Add truncate class */}
-      <p className="text-yellow-500 mt-1">⭐ {app.scoreText}</p>
+      <p className="text-yellow-800 mt-1">⭐ {app.scoreText}</p>
     </div>
   );
 };
