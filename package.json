@@ -20,7 +20,7 @@
     "react-icons": "^5.2.1",
     "supports-color": "^8.1.1",
     "swiper": "^11.1.9",
-    "universal-img-component": "^1.0.0"
+    "universal-img-component": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

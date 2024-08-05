@@ -1,12 +1,13 @@
-// app/page.js
-
-import Img from "@/lib/Img"
+import Img from "universal-img-component";
 
 export default function Page() {
   const imageUrl = "https://via.placeholder.com/150";
 
   return (
     <div>
+      <h2>Cloudinary Mode</h2>
+      <Img src={imageUrl} mode={"cloudinary"} format={"webp"} alt="placeholder" width="150" height="150" />
+
       <h2>Normal Mode</h2>
       <Img src={imageUrl} alt="placeholder" mode="normal" width="150" height="150" />
 
@@ -41,6 +42,7 @@ export default function Page() {
       />
 
       <h2>Next Mode</h2>
+      {/* Uncomment the line below when using Next.js environment */}
       {/* <Img src={imageUrl} alt="placeholder" mode="next" width={150} height={150} /> */}
     </div>
   );
