@@ -1,9 +1,9 @@
-import gplay, { app } from "google-play-scraper";
+import gplay  from "google-play-scraper";
 
-import { AppCard1 , AppCard2, AppCard4, AppCard5 } from './AppCards';
+import {   AppCard5 } from './AppCards';
 
 
-const PopularApps = async ({apps ,  category , collection , num = 12 , title  = " Apps" , col}) => {
+const PopularApps = async ({apps ,  category , collection , num = 12 , title  = " Apps" }) => {
 
   if(!apps){
     apps = await gplay.list({

@@ -1,15 +1,7 @@
-import dynamic from 'next/dynamic';
 import HeroSection from './_components/HeroSection';
 import TopApps from './_components/TopApps';
-// import AppCrousel from './_components/AppCrousel';
+import PopularApps from './_components/PopularApps';
 import gplay from 'google-play-scraper';
-// import PopularApps from './_components/PopularApps';
-
-// Dynamic import for the PopularApps component with loading fallback
-const PopularApps = dynamic(() => import('./_components/PopularApps'), {
-  loading: () => <div>Loading Popular Apps...</div>,
-  ssr: true,
-});
 
 export default function Home() {
   return (
@@ -21,7 +13,7 @@ export default function Home() {
       <div id="topapps" className="mb-20"></div>
       <TopApps title="Top Apps" />
 
-      {/* Dynamically-loaded PopularApps components */}
+      {/* Statically-loaded PopularApps components */}
       <PopularApps
         category={gplay.category.ANDROID_WEAR}
         title="Android Wear"
@@ -39,7 +31,6 @@ export default function Home() {
       <PopularApps
         category={gplay.category.EDUCATION}
         title="Education"
-
       />
     </>
   );

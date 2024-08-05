@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="search" type="application/opensearchdescription+xml" title="AppedMe Search" href="/opensearch.xml"/>
-        <link rel="dns-prefetch" href="https://res.cloudinary.com" />.
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
       
       </head>
