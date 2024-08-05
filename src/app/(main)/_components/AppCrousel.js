@@ -43,7 +43,7 @@ export default function AppCrousel({apps}) {
         {
           images.map((img, index) => (
             <SwiperSlide key={index}>
-              <Img mode='cloudinary' src={img} className="object-cover w-full h-full" />
+              <Img mode='cloudinary' alt="crouse for apped.me homepage" src={img} className="object-cover w-full h-full" />
             </SwiperSlide>
           ))
         }
