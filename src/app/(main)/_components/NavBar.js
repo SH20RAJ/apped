@@ -22,7 +22,7 @@ export default function Navbar() {
             />
           </Link>
           <ul className="hidden md:flex space-x-6">
-            <Link href="/" className=" text-xl text-blue-500  ">
+            <Link href="/" className=" text-xl text-blue-800  ">
               Apped
             </Link>
 

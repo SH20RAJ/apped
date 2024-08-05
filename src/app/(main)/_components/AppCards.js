@@ -99,6 +99,8 @@ export const AppCard5 = ({ app }) => {
         <Img
           loading="lazy"
           mode="cloudinary"
+          height={"180"}
+          format={"webp"}
           src={app.icon}
           alt={app.title}
           className="w-full h-28 object-cover rounded-t-lg"

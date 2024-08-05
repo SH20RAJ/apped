@@ -1,46 +1,46 @@
+import dynamic from 'next/dynamic';
+import HeroSection from './_components/HeroSection';
+import TopApps from './_components/TopApps';
+import AppCrousel from './_components/AppCrousel';
+import gplay from 'google-play-scraper';
 
-import React, { lazy, Suspense } from "react";
-import HeroSection from "./_components/HeroSection";
-import TopApps from "./_components/TopApps";
-import AppCrousel from "./_components/AppCrousel";
-import gplay from "google-play-scraper";
-
-// Lazy load the PopularApps component
-const PopularApps = lazy(() => import("./_components/PopularApps"));
+// Dynamic import for the PopularApps component with loading fallback
+const PopularApps = dynamic(() => import('./_components/PopularApps'), {
+  loading: () => <div>Loading Popular Apps...</div>,
+  ssr: false,
+});
 
 export default function Home() {
   return (
     <>
-      <AppCrousel />
+      {/* <AppCrousel /> */}
       <HeroSection />
 
       {/* <Apps /> */}
       <div id="topapps" className="mb-20"></div>
       <TopApps title="Top Apps" />
 
-      {/* Lazy-loaded PopularApps components */}
+      {/* Dynamically-loaded PopularApps components */}
       <PopularApps
         category={gplay.category.ANDROID_WEAR}
         title="Android Wear"
         num="24"
       />
-      <Suspense fallback={<div>Loading Popular Apps...</div>}>
-        <PopularApps
-          category={gplay.category.APPLICATION}
-          title="Application"
-          num="24"
-        />
-        <PopularApps
-          category={gplay.category.COMMUNICATION}
-          title="Communication"
-          num="24"
-        />
-        <PopularApps
-          category={gplay.category.EDUCATION}
-          title="Education"
-          num="24"
-        />
-      </Suspense>
+      <PopularApps
+        category={gplay.category.APPLICATION}
+        title="Application"
+        num="24"
+      />
+      <PopularApps
+        category={gplay.category.COMMUNICATION}
+        title="Communication"
+        num="24"
+      />
+      <PopularApps
+        category={gplay.category.EDUCATION}
+        title="Education"
+        num="24"
+      />
     </>
   );
 }

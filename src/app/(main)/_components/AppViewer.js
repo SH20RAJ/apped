@@ -58,6 +58,8 @@ const AppViewer = async ({ appId, app, download }) => {
             {app.screenshots.map((image, index) => (
               <Img
                 mode="cloudinary"
+                format={"webp"}
+                height={400}
                 loading="lazy"
                 key={index}
                 src={image}
