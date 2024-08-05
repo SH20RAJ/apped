@@ -95,14 +95,17 @@ export const AppCard5 = ({ app }) => {
     <div className="bg-white rounded-lg shadow-md p-4 h-58">
       {" "}
       {/* Set a fixed height */}
-      <Link href={"/" + slugify(app.title) + "/" + app.appId}>
+      <Link
+        aria-label={"App URL for " + app.title}
+        href={"/" + slugify(app.title) + "/" + app.appId}
+      >
         <Img
           loading="lazy"
           mode="cloudinary"
           height={"180"}
           format={"webp"}
           src={app.icon}
-          alt={app.title}
+          alt={"Logo Image for App" + app.title + "hosted on Apped.Me"}
           className="w-full h-28 object-cover rounded-t-lg"
         />
         <h3 className="text-lg font-semibold mt-2 truncate">{app.title}</h3>{" "}

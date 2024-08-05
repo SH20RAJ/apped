@@ -1,16 +1,14 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FiSearch, FiUser } from "react-icons/fi";
 
 export default function SearchBar() {
-    let q = useSearchParams();
-    q = q.get("q") || "";
-    
-    const [search, setSearch] = useState("");
+  let q = useSearchParams();
+  q = q.get("q") || "";
 
-
+  const [search, setSearch] = useState("");
 
   return (
     <div>
@@ -28,7 +26,12 @@ export default function SearchBar() {
             />
           </form>
         </div>
-        <Link href="/dashboard"><FiUser className="text-2xl text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer" /></Link>
+        <Link href="/dashboard" aria-label={"Dashboard"}>
+          <FiUser
+            alt="User Icon"
+            className="text-2xl text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer"
+          />
+        </Link>
       </div>
     </div>
   );

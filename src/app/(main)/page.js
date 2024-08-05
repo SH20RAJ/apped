@@ -24,7 +24,6 @@ export default function Home() {
       <PopularApps
         category={gplay.category.ANDROID_WEAR}
         title="Android Wear"
-        num="24"
       />
       <PopularApps
         category={gplay.category.APPLICATION}
@@ -39,7 +38,7 @@ export default function Home() {
       <PopularApps
         category={gplay.category.EDUCATION}
         title="Education"
-        num="24"
+
       />
     </>
   );
