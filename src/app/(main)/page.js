@@ -1,14 +1,15 @@
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import HeroSection from './_components/HeroSection';
 import TopApps from './_components/TopApps';
-import AppCrousel from './_components/AppCrousel';
+// import AppCrousel from './_components/AppCrousel';
 import gplay from 'google-play-scraper';
+import PopularApps from './_components/PopularApps';
 
 // Dynamic import for the PopularApps component with loading fallback
-const PopularApps = dynamic(() => import('./_components/PopularApps'), {
-  loading: () => <div>Loading Popular Apps...</div>,
-  ssr: false,
-});
+// const PopularApps = dynamic(() => import('./_components/PopularApps'), {
+//   loading: () => <div>Loading Popular Apps...</div>,
+//   ssr: false,
+// });
 
 export default function Home() {
   return (

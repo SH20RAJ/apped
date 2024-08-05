@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
     title: app.title +" APK Download for Android - Latest Version",
     description: app.summary,
     image: app.icon,
-    url: `https://apped.me/${appSlug}/${appId}`,
+    url: `https://www.apped.me/${appSlug}/${appId}`,
     //og and twitter
     openGraph: {
       title: app.title,
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
       description: app.summary,
       image: app.headerImage || app.icon,
       images: [...app.screenshots, app.icon],
-      url: `https://apped.me/${appSlug}/${appId}`,
+      url: `https://www.apped.me/${appSlug}/${appId}`,
     },
   };
 }
