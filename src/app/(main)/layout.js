@@ -11,7 +11,7 @@ export default function AppLayout({ children }) {
     <>
     <Navbar />
 
-    <main className=" mt-20">
+    <main className=" mt-20" suppressHydrationWarning={true}>
       {children}
     </main>
     <Footer />
