@@ -138,7 +138,9 @@ const AppViewer = async ({ appId, app, download }) => {
                   </tr>
                   <tr className="hover:bg-gray-100">
                     <td className="py-3 px-4 border-b">Recent Changes</td>
-                    <td className="py-3 px-4 border-b">{app.recentChanges}</td>
+                    <td className="py-3 px-4 border-b">
+                      <div dangerouslySetInnerHTML={{__html: app.recentChanges}}></div>
+                    </td>
                   </tr>
                   <tr className="hover:bg-gray-100">
                     <td className="py-3 px-4 border-b">Installs</td>
@@ -168,7 +170,7 @@ const AppViewer = async ({ appId, app, download }) => {
                   </tr>
                   <tr className="hover:bg-gray-100">
                     <td className="py-3 px-4 border-b">Developer Email</td>
-                    <td className="py-3 px-4 border-b">{app.developerEmail}</td>
+                    <td className="py-3 px-4 border-b"> <a href={"mailto:"+app.developerEmail}>{app.developerEmail}</a></td>
                   </tr>
                   <tr className="hover:bg-gray-100">
                     <td className="py-3 px-4 border-b">Developer Website</td>
