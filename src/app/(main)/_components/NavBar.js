@@ -1,10 +1,10 @@
-
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-// import SearchBar from "./SearchBar";
+
+const SearchBar = dynamic(() => import("./SearchBar"), { ssr: false });
 
 export default function Navbar() {
-
   return (
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -19,10 +19,9 @@ export default function Navbar() {
             />
           </Link>
           <ul className="hidden md:flex space-x-6">
-            <Link href="/" className=" text-xl text-blue-800  ">
+            <Link href="/" className=" text-xl text-blue-800">
               Apped
             </Link>
-
             <li>
               <Link
                 href="/games"
@@ -41,12 +40,12 @@ export default function Navbar() {
             </li>
             <li className="relative">
               <button className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300 flex items-center">
-                <Link href={"/articles"}> Articles </Link>
+                <Link href="/articles">Articles</Link>
               </button>
             </li>
           </ul>
         </div>
-        {/* <SearchBar /> */}
+        <SearchBar />
       </nav>
     </header>
   );

@@ -1,14 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiSearch, FiUser } from "react-icons/fi";
 
 export default function SearchBar() {
-  let q = useSearchParams();
-  q = q.get("q") || "";
-
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams.get("q") || "";
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setSearch(initialQuery);
+  }, [initialQuery]);
 
   return (
     <div>
@@ -18,9 +21,9 @@ export default function SearchBar() {
           <form action="/search">
             <input
               type="search"
-              className="py-2  pl-10 pr-4 text-sm bg-gray-100 rounded-full focus:outline-none focus:bg-white shadow transition duration-300"
+              className="py-2 pl-10 pr-4 text-sm bg-gray-100 rounded-full focus:outline-none focus:bg-white shadow transition duration-300"
               placeholder="Search..."
-              defaultValue={q}
+              value={search}
               onChange={(e) => setSearch(e.target.value)}
               name="q"
             />
