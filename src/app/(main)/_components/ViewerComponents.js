@@ -1,10 +1,11 @@
+import { slugify } from "@/lib/func";
 import { Download } from "@/lib/svgs";
 
 export const DownloadButtons = ({ app, appId }) => {
   return (
     <div className="flex flex-col lg:flex-row gap-4 mb-8">
       <a
-        href={"https://d.apkpure.net/b/APK/" + appId + "?version=latest"}
+        href={"/" + slugify(app.title) + "/" + appId + "/download"}
         target="_blank"
         rel="noreferrer noopener"
         className="flex-1 bg-blue-500 text-white rounded-lg py-3 px-4 flex items-center justify-center gap-2"
@@ -44,7 +45,7 @@ export const DownloadButtons2 = ({ app, appId }) => {
     <>
       <div className="flex gap-4 mb-8">
         <a
-          href={"https://d.apkpure.net/b/APK/" + appId + "?version=latest"}
+          href={"/" + app.title + appId + "/download"}
           target="_"
           className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md"
         >

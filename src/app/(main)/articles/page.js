@@ -1,25 +1,8 @@
 import Link from "next/link";
 
 export default async function Articles() {
-  let article = [
-    {
-      title: "How to build a website",
-      url: "",
-      description: "Learn how to build a website from scratch",
-    },
-    {
-      title: "How to build a mobile app",
-      url: "",
-      description: "Learn how to build a mobile app from scratch",
-    },
-    {
-      title: "How to build a web app",
-      url: "",
-      description: "Learn how to build a web app from scratch",
-    },
-  ];
 
-  let articles = await fetch("https://dev.to/api/articles/latest?username=apped&per_page=500");
+  let articles = await fetch("https://dev.to/api/articles/latest?username=apped&per_page="+Math.random()*500);
   articles = await articles.json()
 
   return (
