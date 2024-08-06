@@ -9,12 +9,13 @@ export async function generateMetadata({ params }) {
   return {
     title: app.title +" APK Download for Android - Latest Version",
     description: app.summary,
-    image: app.icon,
+    image: app.headerImage || app.icon,
     url: `https://www.apped.me/${appSlug}/${appId}`,
+    icon: app.icon,
     //og and twitter
     openGraph: {
       title: app.title,
-      site_name: "AppEd",
+      site_name: "Apped.me",
       type: "website",      
       description: app.summary,
       image: app.headerImage || app.icon,
