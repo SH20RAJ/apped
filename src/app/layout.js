@@ -13,7 +13,7 @@ let scripts = `
 `;
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" id='html'>
       <head>
         <link rel="icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />

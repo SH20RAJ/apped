@@ -1,12 +1,9 @@
-"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { FiSearch, FiUser } from "react-icons/fi";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 
 export default function Navbar() {
-  const [dropdown, setDropdown] = useState(false);
 
   return (
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
@@ -49,7 +46,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </nav>
     </header>
   );

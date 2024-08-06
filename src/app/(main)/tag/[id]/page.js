@@ -1,6 +1,7 @@
-import React from "react";
-import PopularApps from "../../_components/PopularApps";
+
+
 import gplay from "google-play-scraper";
+import PopularApps from "../../_components/PopularApps";
 
 
 

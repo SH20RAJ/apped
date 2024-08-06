@@ -1,21 +1,6 @@
-"use client";
-
-import { Bird } from "lucide";
 import Image from "next/image";
 import Link from "next/link";
 
-// add Copyright © 2014-2024 APKPure All rights reserved. | Privacy Policy | Copyright Policy | Terms | EU AMAU
-// add social media icons
-// add quick links
-// add categories
-// Developers
-// Developer Console
-// Submit APK
-// Traffic Monetization with APKPure
-// Company
-// About Us
-// Contact Us
-// Business Cooperation
 
 export default function Footer() {
   return (

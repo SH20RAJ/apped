@@ -1,4 +1,4 @@
-import gplay, { app } from "google-play-scraper";
+import gplay from "google-play-scraper";
 import { AppCard5 } from './AppCards';
 
 const TopApps = async ({ apps, category, collection = gplay.collection.GROSSING, num = 12, title = "Apps", col }) => {

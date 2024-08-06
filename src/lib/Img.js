@@ -72,30 +72,6 @@ const Img = async ({
       console.error("Error converting textbase image to base64:", error); // Log any errors
       finalSrc = url; // Fallback to the original URL in case of error
     }
-  } else if (mode === "next") {
-    // Mode to use Next.js Image component
-    try {
-      const { default: Image } = await import("next/image"); // Dynamically import the Next.js Image component
-      return (
-        <Image
-          src={src}
-          width={width}
-          height={height}
-          {...props} // Apply all other props like alt, className, etc.
-        />
-      );
-    } catch (error) {
-      console.error("Error loading next/image:", error); // Log any errors
-      // Fallback to a normal <img> if `next/image` cannot be loaded
-      return (
-        <img
-          src={finalSrc}
-          width={width || "auto"}
-          height={height || "auto"}
-          {...props} // Apply all other props like alt, className, etc.
-        />
-      );
-    }
   } else if (mode === 'cloudinary') {
     // Mode to use Cloudinary for the image
     const cloudinaryUrl = new URL(src); // Create a URL object from the source URL

@@ -1,6 +1,6 @@
 
 import Image from 'next/image'
-import gplay from 'google-play-scraper'
+
 function HeroSection() {
 
   return (

@@ -1,20 +1,19 @@
-import Footer from "./_components/Footer"
-import Navbar from "./_components/NavBar"
+import Footer from "./_components/Footer";
+import Navbar from "./_components/NavBar";
 
 export const metadata = {
-  title: 'Apped - Download, Share, and Manage Your Apps',
-  description: 'Apped is a platform for downloading, sharing, and managing your apps.',
-}
+  title: "Apped - Download, Share, and Manage Your Apps",
+  description:
+    "Apped is a platform for downloading, sharing, and managing your apps.",
+};
 
 export default function AppLayout({ children }) {
   return (
     <>
-    <Navbar />
+      <Navbar />
 
-    <main className=" mt-20" suppressHydrationWarning={true}>
-      {children}
-    </main>
-    <Footer />
+      <main className=" mt-20">{children}</main>
+      <Footer />
     </>
-  )
+  );
 }
