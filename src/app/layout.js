@@ -4,6 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: "Apped - Download, Share, and Manage Your Apps",
   description:
     "Apped is a platform for downloading, sharing, and managing your apps.",
@@ -11,7 +12,6 @@ export const metadata = {
   url: "https://apped.me",
   type: "website",
   siteName: "Apped",
-
   twitter: {
     site: "@appedme",
     cardType: "summary_large_image",
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
         <script
           async

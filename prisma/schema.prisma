@@ -1,0 +1,72 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  name      String
+  apps      App[]
+  reviews   Review[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model App {
+  id              Int           @id @default(autoincrement())
+  name            String
+  packageName     String        @unique
+  logo            String
+  shortDesc       String
+  description     String
+  policyUrl       String
+  icon            String
+  type            AppType
+  userId          Int
+  user            User          @relation(fields: [userId], references: [id])
+  categories      Category[]    @relation("AppCategories")
+  versions        AppVersion[]
+  reviews         Review[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Category {
+  id        Int     @id @default(autoincrement())
+  name      String
+  apps      App[]   @relation("AppCategories")
+}
+
+model AppVersion {
+  id        Int       @id @default(autoincrement())
+  version   String
+  appId     Int
+  app       App       @relation(fields: [appId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Review {
+  id        Int       @id @default(autoincrement())
+  rating    Int
+  comment   String
+  appId     Int
+  app       App       @relation(fields: [appId], references: [id])
+  userId    Int
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+enum AppType {
+  APP
+  GAME
+}

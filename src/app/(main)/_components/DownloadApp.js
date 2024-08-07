@@ -7,7 +7,7 @@ import Img from "@/lib/Img";
 import Histogram from "./Histogram";
 
 const DownloadApp = async ({ appId, app }) => {
-  console.log("DownloadApp", appId, app);
+  // console.log("DownloadApp", appId, app);
 
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row">

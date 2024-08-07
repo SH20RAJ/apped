@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
 export default async function AppPage({ params }) {
   const { appSlug, appId } = params;
   let app = await gplay.app({ appId: appId });
-  console.log(app);
+  // console.log(app);
   const jsonLd = {
     "@context": "http://schema.org",
     "@type": "SoftwareApplication",

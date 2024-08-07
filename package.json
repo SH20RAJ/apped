@@ -10,12 +10,14 @@
     "i": "npm run build && npm start"
   },
   "dependencies": {
+    "@prisma/client": "^5.12.1",
     "apk-parser": "^0.1.7",
     "chart.js": "^4.4.3",
     "clamav.js": "^0.12.0",
     "google-play-scraper": "^10.0.0",
     "lucide": "^0.424.0",
     "next": "^14.0.1",
+    "next-auth": "^5.0.0-beta.20",
     "next-pwa": "^5.6.0",
     "react": "^18",
     "react-dom": "^18",
@@ -30,6 +32,7 @@
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
+    "prisma": "^5.12.1",
     "tailwindcss": "^3.3.0"
   }
 }
