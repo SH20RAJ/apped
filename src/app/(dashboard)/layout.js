@@ -6,9 +6,9 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 
 export default async function DashBoardLayOut({ children }) {
-  return (<h1> Currently We are not accepting apps from your region.</h1>)
+  // return (<h1> Currently We are not accepting apps from your region.</h1>)
   const session = await auth()
-  if(!session) redirect("/signin");
+  if(!session) redirect("/join");
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1">

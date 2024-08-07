@@ -12,7 +12,7 @@ export default function AppLayout({ children }) {
     <>
       <Navbar />
 
-      <main className=" mt-20">{children}</main>
+      <main className=" ">{children}</main>
       <Footer />
     </>
   );

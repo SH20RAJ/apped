@@ -1,49 +1,23 @@
-import Img from "universal-img-component";
+import { auth } from '@/auth';
+import React from 'react'
 
-export default function Page() {
-  const imageUrl = "https://via.placeholder.com/150";
-
+export default async function page() {
+  let session = await auth();
   return (
     <div>
-      <h2>Cloudinary Mode</h2>
-      <Img src={imageUrl} mode={"cloudinary"} format={"webp"} alt="placeholder" width="150" height="150" />
-
-      <h2>Normal Mode</h2>
-      <Img src={imageUrl} alt="placeholder" mode="normal" width="150" height="150" />
-
-      <h2>Base64 Mode</h2>
-      <Img src={imageUrl} alt="placeholder" mode="base64" width="150" height="150" />
-
-      <h2>CDN Mode</h2>
-      <Img src={imageUrl} alt="placeholder" mode="cdn" width="300" height="300" format="webp" fit="cover" />
-
-      <h2>Text Mode</h2>
-      <Img
-        src=""
-        mode="text"
-        text="Hello World"
-        theme="dark"
-        fontsize="24px"
-        width="800"
-        height="400"
-        alt="Open Graph Image"
-      />
-
-      <h2>TextBase Mode</h2>
-      <Img
-        src=""
-        mode="textbase"
-        text="Hello World"
-        theme="dark"
-        fontsize="80px"
-        width="800"
-        height="400"
-        alt="Base64 Open Graph Image"
-      />
-
-      <h2>Next Mode</h2>
-      {/* Uncomment the line below when using Next.js environment */}
-      {/* <Img src={imageUrl} alt="placeholder" mode="next" width={150} height={150} /> */}
+      {
+        session ? (
+          <div>
+            <h1>Session</h1>
+            <pre>{JSON.stringify(session, null, 2)}</pre>
+          </div>
+        ) : (
+          <div>
+            <h1>Not signed in</h1>
+            <a href="/api/auth/signin">Sign in</a>
+          </div>
+        )
+      }
     </div>
-  );
+  )
 }

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import UserAvatar from './Avatar';
 
 export default function DashNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,7 @@ export default function DashNav() {
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md font-medium hover:bg-blue-600 transition duration-300">
-            Add App
-          </button>
+          <UserAvatar />
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -41,7 +40,7 @@ export default function DashNav() {
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                 <a
-                  href="logout"
+                  href="/logout"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Logout
