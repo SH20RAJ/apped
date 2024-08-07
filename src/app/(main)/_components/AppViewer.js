@@ -65,7 +65,7 @@ const AppViewer = async ({ appId, app, download }) => {
                 key={index}
                 src={image}
                 alt={`Screenshot ${index + 1}`}
-                className="w-64 h-80 object-cover rounded-lg shadow-md"
+                className=" h-80 object-cover rounded-lg shadow-md"
               />
             ))}
           </div>
