@@ -139,7 +139,7 @@ const AppViewer = async ({ appId, app, download }) => {
                   <tr className="hover:bg-gray-100">
                     <td className="py-3 px-4 border-b">Recent Changes</td>
                     <td className="py-3 px-4 border-b">
-                      <div dangerouslySetInnerHTML={{__html: app.recentChanges}}></div>
+                      <div dangerouslySetInnerHTML={{__html: app.recentChanges || <>N/A</>}}></div>
                     </td>
                   </tr>
                   <tr className="hover:bg-gray-100">
