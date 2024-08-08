@@ -8,55 +8,78 @@ datasource db {
 }
 
 model User {
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  password      String
+  name          String
+  avatar        String
+  image         String
+  githubtoken   String?
+  createdStores Store[]  @relation("UserCreatedStores") // Stores created by the user
+  ownedApps     App[]    @relation("UserOwnedApps") // Apps owned by the user
+  reviews       Review[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  stores        Store[]  @relation("StoreUsers")
+}
+
+model Store {
   id          Int      @id @default(autoincrement())
-  email       String   @unique
-  password    String
   name        String
-  avatar      String
-  image       String
-  githubtoken String?
-  stores      Store[]  @relation("UserStores")
-  ownedApps   App[]    @relation("UserApps")
-  reviews     Review[]
+  createdById Int // Foreign key to the user who created the store
+  createdBy   User     @relation("UserCreatedStores", fields: [createdById], references: [id])
+  users       User[]   @relation("StoreUsers") // Users associated with the store
+  apps        App[]    @relation("StoreApps") // Apps associated with the store
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
 
-model Store {
-  id        Int      @id @default(autoincrement())
-  name      String
-  users     User[]   @relation("UserStores")
-  apps      App[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model App {
-  id          Int          @id @default(autoincrement())
-  name        String
-  packageName String       @unique
-  logo        String
-  shortDesc   String
-  description String
-  policyUrl   String
-  icon        String
-  appLink     String
-  type        AppType
-  screenshots String
-  userId      Int
-  user        User         @relation(fields: [userId], references: [id], name: "UserApps")
-  storeId     Int
-  store       Store        @relation(fields: [storeId], references: [id])
-  categories  Category[]   @relation("AppCategories")
-  versions    AppVersion[]
-  reviews     Review[]
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  id               Int          @id @default(autoincrement())
+  name             String
+  packageName      String       @unique
+  slug             String       @unique
+  logo             String
+  shortDesc        String
+  description      String
+  policyUrl        String
+  icon             String
+  appLink          String
+  type             AppType
+  screenshots      String
+  userId           Int
+  user             User         @relation("UserOwnedApps", fields: [userId], references: [id])
+  storeId          Int
+  store            Store        @relation("StoreApps", fields: [storeId], references: [id])
+  categories       Category[]   @relation("AppCategories")
+  versions         AppVersion[]
+  reviews          Review[]
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  contentRating    String?
+  installs         String?
+  size             String?
+  version          String?
+  androidVer       String?
+  developer        String?
+  developerEmail   String?
+  developerWebsite String?
+  developerAddress String?
+  privacyPolicy    String?
+  whatsNew         String?
+  video            String?
+  featured         Boolean?
+  status           Boolean?
+  price            Float?
+  currency         String?
+  free             Boolean?
+  sale             Boolean?
+  salePrice        Float?
 }
 
 model Category {
   id   Int    @id @default(autoincrement())
-  name String
+  name String @unique
   apps App[]  @relation("AppCategories")
 }
 

@@ -1,12 +1,12 @@
-'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+
 import { FiMenu, FiX } from 'react-icons/fi';
 import UserAvatar from './Avatar';
 
 export default function DashNav() {
-  const [isOpen, setIsOpen] = useState(false);
+const isOpen = false;
 
   return (
     <header className="bg-white shadow-md  top-0 w-full z-50">
@@ -30,13 +30,14 @@ export default function DashNav() {
         <div className="flex items-center space-x-4">
           <UserAvatar />
           <div className="relative">
+            <a href="/logout" className="hidden md:block text-gray-800 font-medium hover:text-gray-500 transition duration-300">
             <button
-              onClick={() => setIsOpen(!isOpen)}
               className="flex items-center text-gray-800 focus:outline-none"
             >
               <FiMenu className={`h-6 w-6 ${isOpen ? 'hidden' : 'block'}`} aria-hidden="true" />
               <FiX className={`h-6 w-6 ${isOpen ? 'block' : 'hidden'}`} aria-hidden="true" />
             </button>
+            </a>
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                 <a

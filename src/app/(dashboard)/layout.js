@@ -1,14 +1,15 @@
-import React from "react";
+
 import DashSideBar from "./components/DashSideBar";
 import DashNav from "./components/DashNav";
 import DashFooter from "./components/DashFooter";
-import { redirect } from "next/navigation";
-import { auth } from "@/auth";
+// import { redirect } from "next/navigation";
+// import { auth } from "@/auth";
 
 export default async function DashBoardLayOut({ children }) {
   // return (<h1> Currently We are not accepting apps from your region.</h1>)
-  const session = await auth()
-  if(!session) redirect("/join");
+  // const session = await auth()
+  // if(!session) redirect("/join");
+  return <>Currently App Uploading In Your Area isn't supported....</>
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1">

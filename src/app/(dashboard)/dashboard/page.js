@@ -1,9 +1,4 @@
-import { redirect } from "next/navigation";
-import DashContent from "../components/DashContent";
-
+'use client'
 export default function Dashboard() {
-  redirect("/dashboard/apps");
-  return (
-    <DashContent />
-  );
+  location.href = '/dashboard/apps'
 }
