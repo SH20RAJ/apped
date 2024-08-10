@@ -1,13 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL('http://localhost:3000'),
   title: "Apped - Download, Share, and Manage Your Apps",
   description:
     "Apped is a platform for downloading, sharing, and managing your apps.",
