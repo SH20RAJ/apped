@@ -42,11 +42,6 @@ const categoryMap = {
   "Maps & Navigation": 36
 };
 
-export const config = {
-  api: {
-    bodyParser: false, // Disables Next.js body parsing to handle file uploads
-  },
-};
 
 export const POST = async (req) => {
   try {
