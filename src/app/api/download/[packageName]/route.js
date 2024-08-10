@@ -44,3 +44,4 @@ export async function GET(request, { params }) {
     return new Response("Internal server error", { status: 500 });
   }
 }
+export const runtime = 'edge';

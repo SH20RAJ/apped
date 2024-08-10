@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { getImage, uploadFile } from '@/lib/upload';
 import prisma from '@/prisma';
 import { slugify } from '@/lib/func';
-
 // Mapping of category names to their IDs
 const categoryMap = {
   "Productivity": 1,
@@ -41,6 +40,7 @@ const categoryMap = {
   "House & Home": 35,
   "Maps & Navigation": 36
 };
+
 
 
 export const POST = async (req) => {
@@ -110,3 +110,6 @@ export const POST = async (req) => {
     return NextResponse.json({ error: 'Error creating app' }, { status: 500 });
   }
 };
+
+
+export const runtime = 'edge';

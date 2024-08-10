@@ -1,7 +1,7 @@
 import Articles from "@/app/(main)/articles/page";
 import Link from "next/link";
 import React from "react";
-
+export const runtime = 'edge';
 export default async function ArticlePage({ params }) {
   const { slug } = params;
 
