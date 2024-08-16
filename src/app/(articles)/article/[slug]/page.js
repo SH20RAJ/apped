@@ -1,7 +1,7 @@
 import Articles from "@/app/(main)/articles/page";
 import Link from "next/link";
 import React from "react";
-export const runtime = 'edge';
+
 export default async function ArticlePage({ params }) {
   const { slug } = params;
 
@@ -18,10 +18,8 @@ export default async function ArticlePage({ params }) {
       </div>
       <div>
         {/* <Articles/> */}
-        <Link href="/articles"
-        className=" p-4 mt-10  "
-        >
-        Back to articles
+        <Link href="/articles" className=" p-4 mt-10  ">
+          Back to articles
         </Link>
       </div>
     </div>

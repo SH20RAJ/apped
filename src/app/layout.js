@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// export const runtime = 'edge';
-
+//
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +22,7 @@ export const metadata = {
     locale: "en_US",
     url: "https://apped.me",
     siteName: "Apped",
-    image : "/api/og/%22",
+    image: "/api/og/%22",
     images: [
       {
         url: "/logo.png",

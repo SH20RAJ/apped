@@ -11,12 +11,19 @@ export default async function page(req) {
   let search = req.searchParams.q;
   let page = req.searchParams.page || 1;
 
-  let apps = await gplay.search({ term: search || "panda", num: 250, page: page });
+  let apps = await gplay.search({
+    term: search || "panda",
+    num: 250,
+    page: page,
+  });
 
   return (
     <div className=" container  mx-auto">
       <div className="search-header">
-        <h1 className="text-2xl inline-block font-bold mt-2">Search results for "{search}" </h1>  <h2> Page {page}</h2>
+        <h1 className="text-2xl inline-block font-bold mt-2">
+          Search results for "{search}"{" "}
+        </h1>{" "}
+        <h2> Page {page}</h2>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 ">
         {apps.map((app, index) => (
@@ -26,5 +33,3 @@ export default async function page(req) {
     </div>
   );
 }
-
-export const runtime = 'edge';

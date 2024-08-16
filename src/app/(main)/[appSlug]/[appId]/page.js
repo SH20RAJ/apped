@@ -2,14 +2,13 @@ import React from "react";
 import AppViewer from "../../_components/AppViewer";
 import gplay from "google-play-scraper";
 // set meta tags
-export const runtime = 'edge';
 
 export async function generateMetadata({ params }) {
   const { appSlug, appId } = params;
   let app = await gplay.app({ appId: appId });
 
   return {
-    title: app.title +" APK Download for Android - Latest Version",
+    title: app.title + " APK Download for Android - Latest Version",
     description: app.summary,
     image: app.headerImage || app.icon,
     url: `https://www.apped.me/${appSlug}/${appId}`,
@@ -18,7 +17,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: app.title,
       site_name: "Apped.me",
-      type: "website",      
+      type: "website",
       description: app.summary,
       image: app.headerImage || app.icon,
       images: [...app.screenshots, app.icon],
@@ -66,7 +65,7 @@ export default async function AppPage({ params }) {
       },
     },
   };
-  
+
   return (
     <div>
       <script
@@ -74,7 +73,6 @@ export default async function AppPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <link rel="shortcut icon" href={app.icon} type="image/x-icon" />
-      
 
       <AppViewer app={app} appId={appId} />
     </div>

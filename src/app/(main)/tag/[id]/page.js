@@ -1,10 +1,6 @@
-
-
 import gplay from "google-play-scraper";
 import PopularApps from "../../_components/PopularApps";
 
-
-export const runtime = 'edge';
 export default async function page({ params }) {
   let { id } = params;
   id = id.toUpperCase();
@@ -12,7 +8,6 @@ export default async function page({ params }) {
     category: gplay.category[id],
     num: 200,
   });
-
 
   return (
     <div>

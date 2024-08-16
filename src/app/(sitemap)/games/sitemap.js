@@ -1,5 +1,5 @@
 import gplay from "google-play-scraper";
-export const runtime = 'edge';
+
 export default async function sitemap() {
   let sitemap = [];
 
