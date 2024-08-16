@@ -44,7 +44,7 @@ function formatViews(views) {
   } else if (views >= 1000) {
     return (views / 1000).toFixed(1) + 'K';
   } else {
-    return views.toString();
+    return views?.toString();
   }
 }
 
