@@ -26,3 +26,5 @@ export default async function page(req) {
     </div>
   );
 }
+
+export const runtime = 'edge';

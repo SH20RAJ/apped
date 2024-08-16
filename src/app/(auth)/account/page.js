@@ -1,5 +1,5 @@
 import { auth } from "@/auth"
- 
+export const runtime = 'edge';
 export default async function UserAvatar() {
   const session = await auth()
  

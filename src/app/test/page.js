@@ -1,6 +1,6 @@
 import { auth } from '@/auth';
 import React from 'react'
-
+export const runtime = 'edge';
 export default async function page() {
   let session = await auth();
   return (
