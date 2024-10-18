@@ -7,7 +7,7 @@ export const AppCard1 = ({ game }) => {
     <div className="flex bg-white rounded-lg shadow-md p-4">
       <img
         loading="lazy"
-        mode="cloudinary"
+        // mode="cloudinary"
         src={game.image}
         alt={game.name}
         className="w-32 h-32 object-cover rounded-lg"
@@ -26,7 +26,7 @@ export const AppCard2 = ({ game }) => {
     <div className="bg-white rounded-lg shadow-md p-4">
       <Img
         loading="lazy"
-        mode="cloudinary"
+        // mode="cloudinary"
         src={game.image}
         alt={game.name}
         className="w-full h-32 object-cover rounded-t-lg"
@@ -101,7 +101,7 @@ export const AppCard5 = ({ app }) => {
       >
         <Img
           loading="lazy"
-          mode="cloudinary"
+          mode=""
           height={"180"}
           format={"webp"}
           src={app.icon}
