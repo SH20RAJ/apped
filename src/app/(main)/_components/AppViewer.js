@@ -58,7 +58,7 @@ const AppViewer = async ({ appId, app, download }) => {
           <div className="flex overflow-x-scroll space-x-4 pb-4">
             {app.screenshots.map((image, index) => (
               <Img
-                mode="cloudinary"
+                // mode="cloudinary"
                 format={"webp"}
                 height={400}
                 loading="lazy"
@@ -287,7 +287,7 @@ export const AppHeader = ({ app }) => {
       {/* App Header */}
       <div className="flex flex-col lg:flex-row items-center mb-8">
         <Img
-          mode="cloudinary"
+          // mode="cloudinary"
           loading="lazy"
           src={app.icon || "https://via.placeholder.com/150"}
           alt={app?.title}
