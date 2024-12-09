@@ -67,13 +67,11 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
           crossOrigin="anonymous"
         ></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-     crossorigin="anonymous"></script>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-8XJ794KHGF"
         ></script>
-        {/* <script dangerouslySetInnerHTML={{ __html: script }} /> */}
+        <script dangerouslySetInnerHTML={{ __html: script }} />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
