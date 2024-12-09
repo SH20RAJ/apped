@@ -92,9 +92,8 @@ export const AppCard4 = ({ app }) => {
 
 export const AppCard5 = ({ app }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 h-58">
-      {" "}
-      {/* Set a fixed height */}
+    <div className="bg-white rounded-lg shadow-md p-4 w-40 h-60 hover:shadow-lg transition-shadow duration-300 ease-in-out transform  ">
+      {/* Set a fixed height and width with hover effects */}
       <Link
         aria-label={"App URL for " + app.title}
         href={"/" + slugify(app.title) + "/" + app.appId}
@@ -102,18 +101,18 @@ export const AppCard5 = ({ app }) => {
         <Img
           loading="lazy"
           mode=""
-          height={"180"}
-          format={"webp"}
+          height={160}
+          format="webp"
           src={app.icon}
-          alt={"Logo Image for App" + app.title + "hosted on Apped.Me"}
-          className="w-full h-28 object-cover rounded-t-lg"
+          alt={"Logo Image for App" + app.title + " hosted on Apped.Me"}
+          className="w-full h-32 object-cover rounded-t-lg"
         />
-        <h3 className="text-lg font-semibold mt-2 truncate">{app.title}</h3>{" "}
-        {/* Add truncate class */}
+        <h3 className="text-lg font-semibold mt-2 truncate">{app.title}</h3>
+        {/* Add truncate class for title */}
       </Link>
-      <p className="text-gray-600 truncate">{app.developer}</p>{" "}
-      {/* Add truncate class */}
-      <p className="text-yellow-800 mt-1">⭐ {app.scoreText}</p>
+      <p className="text-gray-600 truncate text-sm">{app.developer}</p>
+      {/* Add truncate class for developer */}
+      <p className="text-yellow-800 text-sm ">⭐ {app.scoreText}</p> {/* Slightly increased margin-top */}
     </div>
   );
 };

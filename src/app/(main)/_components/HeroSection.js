@@ -8,12 +8,12 @@ function HeroSection() {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-            <Image
-              src="/placeholder.svg"
+            <img
+              src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/18c43266-03ce-4e83-bd62-6e3ee73d0ba5/original=true,quality=90/00139-anime_fl_Flux_fp8nf4-1647395274.jpeg"
               alt="App Store"
               width={450}
               height={450}
-              className="rounded-lg"
+              className="rounded-lg max-h-52 w-full object-cover shadow-lg hover:shadow-2xl transition duration-300" 
             />
           </div>
 
