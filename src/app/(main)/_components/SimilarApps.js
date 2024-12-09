@@ -1,7 +1,7 @@
 
 
 import gplay from 'google-play-scraper';
-import PopularApps from './PopularApps';
+import {PopularAppsSmall} from './PopularApps';
 
 
 export default async function SimilarApps({appId , num}) {
@@ -9,6 +9,6 @@ export default async function SimilarApps({appId , num}) {
   apps = apps.slice(0, num);
 
   return (
-    <PopularApps apps={apps} />
+    <PopularAppsSmall apps={apps} />
   );
 }
