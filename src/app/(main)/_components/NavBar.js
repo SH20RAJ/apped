@@ -43,6 +43,11 @@ export default function Navbar() {
                 <Link href="/articles">Articles</Link>
               </button>
             </li>
+            <li className="relative">
+              <button className="text-fuchsia-600 hover:text-fuchsia-800 transition duration-300 flex items-center">
+                <Link href="/categories">Categories</Link>
+              </button>
+            </li>
           </ul>
         </div>
         <SearchBar />

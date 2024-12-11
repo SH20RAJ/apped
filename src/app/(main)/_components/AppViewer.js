@@ -8,6 +8,7 @@ import { DownloadButtons } from "./ViewerComponents";
 import Img from "@/lib/Img";
 import { redirect } from "next/navigation";
 import Histogram from "./Histogram";
+// gplay.categories().then(console.log);
 
 const AppViewer = async ({ appId, app, download }) => {
   // let app = await gplay.app({ appId: appId });
