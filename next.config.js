@@ -7,6 +7,17 @@ const withPWA = require("next-pwa")({
   disable: process.env.NODE_ENV === "development",
 });
 
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.googleusercontent.com',
+        pathname: '**',
+      },
+    ],
+  },
+
+};
 
 module.exports = withPWA(nextConfig);

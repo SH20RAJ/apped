@@ -11,7 +11,8 @@ export default async function page({ params }) {
 
   return (
     <div>
-      <title>{id} Tag - Apped</title>
+      <h1 className="text-3xl font-bold text-center">{id.replace(/_/g, ' ')}</h1>
+
       <PopularApps apps={apps} />
     </div>
   );

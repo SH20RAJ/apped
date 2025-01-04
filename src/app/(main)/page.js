@@ -1,37 +1,76 @@
 import HeroSection from './_components/HeroSection';
 import TopApps from './_components/TopApps';
-import PopularApps from './_components/PopularApps';
+import CategorySection from './_components/CategorySection';
 import gplay from 'google-play-scraper';
 
 export default function Home() {
   return (
-    <>
-      {/* <AppCrousel /> */}
+    <div className="min-h-screen bg-gray-50">
       <HeroSection />
+      
+      {/* Top Download Games Section */}
+      <section className="py-8">
+        <TopApps 
+          category={gplay.category.GAME} 
+          collection={gplay.collection.TOP_FREE}
+          title="Top Download Games" 
+          num={8}
+          showRating={true}
+          showDeveloper={true}
+        />
+      </section>
 
-      {/* <Apps /> */}
-      <div id="topapps" className="mb-20"></div>
-      <TopApps title="Top Apps" />
+      {/* Game Categories */}
+      <CategorySection 
+        categories={[
+          { name: 'Action', icon: '🎮' },
+          { name: 'Simulation', icon: '🚗' },
+          { name: 'Arcade', icon: '🕹️' },
+          { name: 'Adventure', icon: '🗺️' },
+          { name: 'Sports', icon: '⚽' },
+          { name: 'Casual', icon: '🎲' }
+        ]}
+        type="games"
+      />
 
-      {/* Statically-loaded PopularApps components */}
-      <PopularApps
-        category={gplay.category.ANDROID_WEAR}
-        title="Android Wear"
+      {/* Top Download Apps Section */}
+      <section className="py-8">
+        <TopApps 
+          category={gplay.category.APPLICATION}
+          collection={gplay.collection.TOP_FREE}
+          title="Top Download Apps"
+          num={8}
+          showRating={true}
+          showDeveloper={true}
+        />
+      </section>
+
+      {/* App Categories */}
+      <CategorySection 
+        categories={[
+          { name: 'Tools', icon: '🔧' },
+          { name: 'Entertainment', icon: '🎬' },
+          { name: 'Video Players & Editors', icon: '📹' },
+          { name: 'Communication', icon: '💬' },
+          { name: 'Social', icon: '👥' },
+          { name: 'Productivity', icon: '📝' }
+        ]}
+        type="apps"
       />
-      <PopularApps
-        category={gplay.category.APPLICATION}
-        title="Application"
-        num="24"
-      />
-      <PopularApps
-        category={gplay.category.COMMUNICATION}
-        title="Communication"
-        num="24"
-      />
-      <PopularApps
-        category={gplay.category.EDUCATION}
-        title="Education"
-      />
-    </>
+
+      {/* Popular Categories */}
+      <section className="py-8">
+        <TopApps
+          category={gplay.category.COMMUNICATION}
+          title="Communication Apps"
+          num={6}
+        />
+        <TopApps
+          category={gplay.category.SOCIAL}
+          title="Social Apps"
+          num={6}
+        />
+      </section>
+    </div>
   );
 }
