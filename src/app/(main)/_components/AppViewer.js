@@ -243,7 +243,7 @@ const AppViewer = async ({ appId, app, download }) => {
         {/* <Reviews/> */}
       </div>
 
-      <SideBar appId={app.appId} num={5} />
+      {/* <SideBar appId={app.appId} num={5} /> */}
     </div>
   );
 };
